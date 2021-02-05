@@ -22,7 +22,7 @@ public class Job {
         nextId++;
     }
 
-    public Job (String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency){
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -50,20 +50,69 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
-    public int getId() { return id; }
+    public int getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public String getName() {
+        return name;
+    }
 
-    public Employer getEmployer() { return employer; }
-    public void setEmployer(Employer employer) { this.employer = employer; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public Location getLocation() { return location; }
-    public void setLocation(Location location) { this.location = location; }
+    public Employer getEmployer() {
+        return employer;
+    }
 
-    public PositionType getPositionType() { return positionType; }
-    public void setPositionType(PositionType positionType) { this.positionType = positionType; }
+    public void setEmployer(Employer employer) {
+        this.employer = employer;
+    }
 
-    public CoreCompetency getCoreCompetency() { return coreCompetency; }
-    public void setCoreCompetency(CoreCompetency coreCompetency) { this.coreCompetency = coreCompetency; }
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public PositionType getPositionType() {
+        return positionType;
+    }
+
+    public void setPositionType(PositionType positionType) {
+        this.positionType = positionType;
+    }
+
+    public CoreCompetency getCoreCompetency() {
+        return coreCompetency;
+    }
+
+    public void setCoreCompetency(CoreCompetency coreCompetency) {
+        this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        if (getName().isEmpty() && getEmployer().getValue().isEmpty() && getLocation().getValue().isEmpty() && getPositionType().getValue().isEmpty() && getCoreCompetency().getValue().isEmpty()){
+            return "Oopsie whoopsie, this job doesn't seem to exist!";
+        }
+        if (getName().isEmpty()) { name = "Data not available"; }
+        if (getEmployer().getValue().isEmpty()) { employer.setValue("Data not available");}
+        if (getLocation().getValue().isEmpty()) { location.setValue("Data not available");}
+        if (getPositionType().getValue().isEmpty()) { positionType.setValue("Data not available");}
+        if (getCoreCompetency().getValue().isEmpty()) { coreCompetency.setValue("Data not available");}
+
+            return "*****" +
+                    "\nid: " + id +
+                    "\nname: " + name +
+                    "\nemployer: " + employer +
+                    "\nlocation: " + location +
+                    "\npositionType: " + positionType +
+                    "\ncoreCompetency: " + coreCompetency +
+                    "\n*****";
+
+    }
 }
