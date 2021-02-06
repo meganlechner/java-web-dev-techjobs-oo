@@ -50,49 +50,22 @@ public class Job {
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public Employer getEmployer() { return employer; }
+    public void setEmployer(Employer employer) { this.employer = employer; }
 
-    public Employer getEmployer() {
-        return employer;
-    }
+    public Location getLocation() { return location; }
+    public void setLocation(Location location) { this.location = location; }
 
-    public void setEmployer(Employer employer) {
-        this.employer = employer;
-    }
+    public PositionType getPositionType() { return positionType; }
+    public void setPositionType(PositionType positionType) { this.positionType = positionType; }
 
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public PositionType getPositionType() {
-        return positionType;
-    }
-
-    public void setPositionType(PositionType positionType) {
-        this.positionType = positionType;
-    }
-
-    public CoreCompetency getCoreCompetency() {
-        return coreCompetency;
-    }
-
-    public void setCoreCompetency(CoreCompetency coreCompetency) {
-        this.coreCompetency = coreCompetency;
-    }
+    public CoreCompetency getCoreCompetency() { return coreCompetency; }
+    public void setCoreCompetency(CoreCompetency coreCompetency) { this.coreCompetency = coreCompetency; }
 
     @Override
     public String toString() {
@@ -105,14 +78,12 @@ public class Job {
         if (getPositionType().getValue().isEmpty()) { positionType.setValue("Data not available");}
         if (getCoreCompetency().getValue().isEmpty()) { coreCompetency.setValue("Data not available");}
 
-            return "*****" +
-                    "\nid: " + id +
-                    "\nname: " + name +
-                    "\nemployer: " + employer +
-                    "\nlocation: " + location +
-                    "\npositionType: " + positionType +
-                    "\ncoreCompetency: " + coreCompetency +
-                    "\n*****";
-
+            return  "\nID: " + id +
+                    "\nName: " + name +
+                    "\nEmployer: " + employer +
+                    "\nLocation: " + location +
+                    "\nPosition Type: " + positionType +
+                    "\nCore Competency: " + coreCompetency +
+                    "\n";
     }
 }
